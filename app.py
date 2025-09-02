@@ -1,6 +1,10 @@
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), "scraper"))
+
 from flask import Flask, request, jsonify
-from scraper.pinterest_scraper import PinterestScraper
-from scraper.firebase_helper import push_to_firebase
+from pinterest_scraper import PinterestScraper
+from firebase_helper import push_to_firebase
 
 app = Flask(__name__)
 scraper = PinterestScraper()
